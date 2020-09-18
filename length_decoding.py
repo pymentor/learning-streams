@@ -2,10 +2,6 @@
 # "a3b5g2a4n6" -> "aaabbbbbggaaaannnnnn"
 # env: python3.8
 
-from re import match, compile
-
-digit_pattern = compile(r"\d")
-
 s = "a1b2c3g1c2d3e4"
 print(s)
 
@@ -16,7 +12,7 @@ chars_group_len_str = None
 for i in range(len(s)):
     char = s[i]
 
-    if not match(digit_pattern, char):
+    if not char.isdigit():
         # first letter or letter from next chars group found,
         # need to save info about previous chars group
         if chars_group_len_str:
