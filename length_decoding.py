@@ -5,7 +5,6 @@
 from re import match, compile
 
 digit_pattern = compile(r"\d")
-letter_pattern = compile(r"\D")
 
 s = "a1b2c3g1c2d3e4"
 print(s)
