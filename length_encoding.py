@@ -7,14 +7,14 @@ print(s)
 
 current_char = None
 counter = None
-string_chars_info = []
+encodes_s = ""
 
 for i in range(len(s)):
     char = s[i]
     if char != current_char:
         # first char or new chars group
         if current_char:
-            string_chars_info.append((current_char, counter))
+            encodes_s += f"{current_char}{counter}"
         current_char = char
         counter = 1
     else:
@@ -23,7 +23,6 @@ for i in range(len(s)):
 
     if i == len(s) - 1:
         # last char found
-        string_chars_info.append((current_char, counter))
+        encodes_s += f"{current_char}{counter}"
 
-encoded_s = "".join(f"{el[0]}{el[1]}" for el in string_chars_info)
-print(encoded_s)
+print(encodes_s)
