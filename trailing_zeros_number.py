@@ -39,10 +39,3 @@ def test():
 
 
 test()
-
-
-for i in range(10000):
-    s = get_sum(i)
-    zn = get_zeros_number(s)
-    if zn != 0:
-        print(f"Number: {i}, S(n): {s}, Zeros number: {zn}")
