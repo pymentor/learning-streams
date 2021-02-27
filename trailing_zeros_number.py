@@ -6,13 +6,12 @@
 
 """
 
+import time
+
+
 def get_sum(n):
-    s = 0
-
-    for num in range(1, n + 1):
-        s += num
-
-    return s
+    d = 1
+    return int(n * (2 + (n - 1) * d) / 2)
 
 
 def get_zeros_number(n):
@@ -27,6 +26,19 @@ def get_zeros_number(n):
         divider *= 10
 
     return zeros_number
+
+
+@profile
+def test():
+    n = 2 ** 63
+    start = time.time()
+    s = get_sum(n)
+    zn = get_zeros_number(s)
+    print(f"n: {n}, Sum: {s}, Zn: {zn}")
+    print(f"Elapsed time: {time.time() - start} sec")
+
+
+test()
 
 
 for i in range(10000):
