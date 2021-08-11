@@ -9,7 +9,9 @@ decoded_s = ""
 current_char = None
 chars_group_len_str = None
 
-for i in range(len(s)):
+len_s = len(s)
+
+for i in range(len_s):
     char = s[i]
 
     if not char.isdigit():
@@ -31,7 +33,7 @@ for i in range(len(s)):
         else:
             chars_group_len_str += char
 
-    if i == len(s) - 1:
+    if i == len_s - 1:
         # last char found
         chars_group_len = int(chars_group_len_str)
         decoded_s += current_char * chars_group_len
