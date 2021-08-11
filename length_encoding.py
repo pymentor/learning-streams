@@ -9,7 +9,9 @@ current_char = None
 counter = None
 encodes_s = ""
 
-for i in range(len(s)):
+len_s = len(s)
+
+for i in range(len_s):
     char = s[i]
     if char != current_char:
         # first char or new chars group
@@ -21,7 +23,7 @@ for i in range(len(s)):
         # next char in the same group
         counter += 1
 
-    if i == len(s) - 1:
+    if i == len_s - 1:
         # last char found
         encodes_s += f"{current_char}{counter}"
 
